@@ -9,6 +9,7 @@ import AddItem from "./components/AddItem.jsx"
 import Inicio from "./components/Inicio/Inicio.jsx"
 import Nosotros from "./components/Nosotros/Nosotros.jsx"
 import Contacto from "./components/Contacto/Contacto.jsx"
+import logoEmpresa from '../assets/logo.png'
 
 const links = [
   { href: '/', label: 'Inicio' },
@@ -21,7 +22,7 @@ const links = [
 function App() {
   return (
     <>
-    <NavBar logo="./assets/logo.png" links={links}></NavBar>
+    <NavBar logo={logoEmpresa} links={links}></NavBar>
     <Routes>
       <Route path='/' element={<Inicio></Inicio>}></Route>
       <Route path='/nosotros' element={<Nosotros></Nosotros>}></Route>
