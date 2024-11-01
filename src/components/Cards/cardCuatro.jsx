@@ -1,5 +1,5 @@
 import '../Cards/Card.css'
-
+import imgDistribucion from './assets/distribucion.png'
 const CardCuatro =()=>{
     return (
         <>
@@ -19,6 +19,7 @@ const CardCuatro =()=>{
                     </ul>  
                 </div>
                 <div className="tarjeta__item item--imagen">
+                    {/* <img src="/src/components/Cards/assets/distribucion.png" alt="Persona midiendo ph de queso"/> */}
                     <img src="/src/components/Cards/assets/distribucion.png" alt="Persona midiendo ph de queso"/>
                 </div>
             </div>
