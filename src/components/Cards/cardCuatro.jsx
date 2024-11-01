@@ -1,4 +1,4 @@
-import './card.css'
+import '../Cards/card.css'
 
 const CardCuatro =()=>{
     return (
