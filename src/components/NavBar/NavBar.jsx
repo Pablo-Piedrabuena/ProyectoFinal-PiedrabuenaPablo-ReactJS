@@ -24,7 +24,7 @@ const NavBar =({ logo, links })=>{
                     <span>1500</span>
                 </div> */}
                 <CartWidget/>
-                <button className='nav-ecomerce__btn-menu'><img src="src/components/NavBar/assets/menu.svg" alt="icono menu" /></button>
+                <button className='nav-ecomerce__btn-menu'><img src="./src/components/NavBar/assets/menu.svg" alt="icono menu" /></button>
             </nav>
         </>
     )
