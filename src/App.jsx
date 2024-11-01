@@ -21,7 +21,7 @@ const links = [
 function App() {
   return (
     <>
-    <NavBar logo="/public/src/assets/logo.png" links={links}></NavBar>
+    <NavBar logo="./assets/logo.png" links={links}></NavBar>
     <Routes>
       <Route path='/' element={<Inicio></Inicio>}></Route>
       <Route path='/nosotros' element={<Nosotros></Nosotros>}></Route>
