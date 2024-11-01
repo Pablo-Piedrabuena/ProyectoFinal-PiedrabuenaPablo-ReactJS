@@ -15,7 +15,7 @@ const links = [
   { href: '/', label: 'Inicio' },
   { href: '/nosotros', label: 'Nosotros' },
   { href: '/productos', label: 'Productos' },
-  { href: '/contacto', label: 'Contacto' },
+  { href: '/contacto2222', label: 'Contacto' },
 ];
 
 
