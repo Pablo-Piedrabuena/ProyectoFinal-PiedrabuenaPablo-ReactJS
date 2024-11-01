@@ -1,5 +1,5 @@
 
-import './NavBar.css'
+import '../NavBar/NavBar.css'
 import CartWidget from "./CartWidget"
 
 const NavBar =({ logo, links })=>{

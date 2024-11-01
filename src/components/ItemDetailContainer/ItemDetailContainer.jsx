@@ -1,5 +1,5 @@
 
-import './ItemDetailContainer.css'
+import '../ItemDetailContainer/ItemDetailContainer.css'
 /* import ProductoItem from "../ProductoItem/ProductoItem" */
 /* import NavBarCategoria from "../NavBarCategoria/NavBarCategoria" */
 /* import {Routes, Route} from 'react-router-dom' */

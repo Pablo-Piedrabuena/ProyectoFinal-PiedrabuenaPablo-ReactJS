@@ -1,6 +1,6 @@
 /* import CardUno from "../Cards/CardUno.jsx"
 import CardDos from "../Cards/CardDos.jsx" */
-import "../Contacto/contacto.css"
+import "../Contacto/Contacto.css"
 const Contacto =()=>{
     return (
         <>

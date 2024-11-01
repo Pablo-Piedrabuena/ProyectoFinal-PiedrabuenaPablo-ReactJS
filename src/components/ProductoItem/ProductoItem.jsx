@@ -1,4 +1,4 @@
-import './ProductoItem.css'
+import '../ProductoItem/ProductoItem.css'
 import { useNavigate } from 'react-router-dom'
 import ItemDetailContainer from "../ItemDetailContainer/ItemDetailContainer"
 import { useEffect, useState } from 'react'
