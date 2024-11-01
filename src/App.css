@@ -710,37 +710,88 @@ h1{
     align-items: center;
     width: 80%;
     margin: 2rem auto;
+    width: 100%;
+    justify-content: center;
   }
   .section-filtro nav{
     margin: auto;
     text-align: center;
     user-select: none;
-    display: flex;
     justify-content: center;
     user-select: none;
-    /* display: flex; */
+    align-items: center;
   }
   .section-filtro nav .navproductos{
     display: flex;
     margin-bottom: 0;
     padding-left: 0;
+    justify-content: center;
     list-style: none;
+    /* flex-wrap: wrap; */
+    width: 100%;
+    box-sizing: border-box;
   }
   .section-filtro nav .navproductos .navproductos__item{
     margin-bottom: 0;
-    margin: 25px;
+    /* margin: 25px; */
     margin-bottom: 0;
+
+
+    border: 2px solid white;
+    border-radius: 5px;
+    background-color: rgba(19, 93, 135, .8);
+    padding: .5rem;
+    height: 1.5rem;
+    flex: 1;
   }
   .section-filtro nav .navproductos .navproductos__item a{
-    color:#135D87;
+  /*   color:#135D87; */
     font-family: 'Barlow', sans-serif;
     font-size: 1rem;
     font-weight: 400;
     text-decoration: none;
+    color: white;
   }
   .elemento-seleccionado{
     border-bottom: 2px solid #135D87;
   }
+
+@media screen and (max-width: 427px){
+  .section-filtro nav .navproductos{
+    flex-direction: column;
+    box-sizing: border-box;
+  }
+  .section-filtro nav .navproductos .navproductos__item{
+    border: 2px solid white;
+    background-color: rgba(19, 93, 135, .8);
+    margin: 0;
+    padding: .5rem;
+    height: 1.5rem;
+  }
+  .section-filtro nav .navproductos .navproductos__item a{
+    color: white;
+  }
+}
+
+
+@media screen and (min-width: 427px) and (max-width: 767px){
+  .section-filtro nav .navproductos{
+    flex-direction: column;
+    box-sizing: border-box;
+  }
+  .section-filtro nav .navproductos .navproductos__item{
+    border: 2px solid white;
+    background-color: rgba(19, 93, 135, .8);
+    margin: 0;
+    padding: .5rem;
+    height: 1.5rem;
+  }
+  .section-filtro nav .navproductos .navproductos__item a{
+    color: white;
+  }
+}
+
+
 /* NAV-CATEGORIAS:FIN */
 
 /* PRODUCTO-ITEM:INICIO */
