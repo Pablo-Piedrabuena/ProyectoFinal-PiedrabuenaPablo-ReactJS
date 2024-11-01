@@ -720,6 +720,7 @@ h1{
     justify-content: center;
     user-select: none;
     align-items: center;
+    width: 80%;
   }
   .section-filtro nav .navproductos{
     display: flex;
