@@ -95,6 +95,7 @@
     border-radius: 5px;
     margin: 0;
     padding: 0;
+    display: flex;
 }
 .productos__item .sin-stock p{
     padding: 0;

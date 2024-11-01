@@ -3,12 +3,15 @@
     box-sizing: border-box;
     justify-content: center;
     transition: all 3s ease-in-out;
+   /*  background-color: black; */
+   background-color: #E6E6E6;
 }
 .agregarProducto-Carrito__ConetenedorImagen {
     background-color: #E6E6E6;
     width: 45%;
     margin: 2rem 0;
     padding: 0;
+    /* background-color: #EDEDED; */
     background-color: #EDEDED;
 }
 
@@ -23,6 +26,8 @@
     display: flex;
     flex-direction: column;
     background-color: #EDEDED;
+    /* background-color: #E6E6E6; */
+    /* background-color: #EDEDED; */
     width: 25%;
     margin: 2rem 0;
     border-left: 1px solid #85929E;
@@ -79,6 +84,9 @@
 
 .agregarProducto-Carrito__Conetenedorform .cantidad-comprar {
     display: flex;
+    box-sizing: border-box;
+    align-items: center;
+    
 }
 
 .agregarProducto-Carrito__Conetenedorform .cantidad-comprar label {
@@ -87,7 +95,8 @@
     font-weight: 400;
     color: #34495E;
     user-select: none;
-    margin-right: 1rem;
+    /* margin-right: 1rem; */
+    width: 5rem;
 }
 
 .agregarProducto-Carrito__Conetenedorform .cantidad-comprar input {
@@ -99,12 +108,33 @@
     width: 5rem;
     color: #34495E;
     text-align: center;
+    margin: 0;
+    padding: 0;
+    height: 1.5rem;
+    border-radius: 5px;
 }
 
 .agregarProducto-Carrito__Conetenedorform .cantidad-comprar input:focus {
     outline: 1px solid #135D87;
 }
 
+.agregarProducto-Carrito__Conetenedorform .cantidad-comprar .icon-advertencia {
+    font-family: 'Barlow', sans-serif;
+    font-size: 1rem;
+    font-weight: 400;
+    color: red;
+    text-align: center;
+    width: 10rem;
+    margin: 0;
+    display: flex;
+    align-items: center;
+}
+.agregarProducto-Carrito__Conetenedorform .cantidad-comprar .icon-advertencia span{
+    font-size: 1rem;
+    color: red;
+    margin: 0;
+    margin-left: 0.5rem;
+}
 .agregarProducto-Carrito__Conetenedorform .cantidad-comprar .Conetenedorform__agregar-carrito {
     text-align: center;
     align-content: center;

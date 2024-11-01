@@ -80,3 +80,12 @@ body{
   margin: 0;
   padding: 0;
 }
+
+.icon-advertencia i{
+  color: blueviolet;
+  font-size: .5rem;
+}
+/* .icon-advertencia{
+  color: red;
+  font-size: 1rem;
+} */
