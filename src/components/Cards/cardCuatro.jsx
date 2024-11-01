@@ -1,5 +1,5 @@
 import '../Cards/Card.css'
-import imgDistribucion from './assets/distribucion.png'
+/* import imgDistribucion from './assets/distribucion.png' */
 const CardCuatro =()=>{
     return (
         <>
@@ -19,20 +19,9 @@ const CardCuatro =()=>{
                     </ul>  
                 </div>
                 <div className="tarjeta__item item--imagen">
-                    {/* <img src="/src/components/Cards/assets/distribucion.png" alt="Persona midiendo ph de queso"/> */}
-                    <img src="/src/components/Cards/assets/distribucion.png" alt="Persona midiendo ph de queso"/>
+                    <img src="https://firebasestorage.googleapis.com/v0/b/app-nogolac.appspot.com/o/Cards%2Fdistribucion.png?alt=media&token=71bf63db-8374-4229-ae62-579fd6a90332" alt="Persona midiendo ph de queso"/>
                 </div>
             </div>
-            {/* <div className="contenedor__tarjeta">
-                <div className="tarjeta__item item--texto">
-                    <h2 className="">{params.titulo}</h2>
-                    <p className="">{params.descripcionUno}</p>
-                    <p className="">{params.descripcionDos}</p>
-                </div>
-                <div className="tarjeta__item item--imagen">
-                    <img src={params.imgsrc} alt="Oficinas Nogolac"/>
-                </div>
-            </div> */}
         </>
     )
 }
