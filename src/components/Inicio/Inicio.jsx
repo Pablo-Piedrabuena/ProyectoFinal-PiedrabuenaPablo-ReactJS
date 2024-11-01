@@ -1,4 +1,5 @@
-import './Inicio.css'
+
+import '../Inicio/inicio.css'
 import CardUno from "../Cards/CardUno.jsx"
 import CardDos from "../Cards/CardDos.jsx"
 const Inicio =()=>{
