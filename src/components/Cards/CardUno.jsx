@@ -1,5 +1,4 @@
-import '../Cards/Card.css'
-
+import './Card.css'
 
 const CardUno =(params)=>{
     return (
