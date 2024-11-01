@@ -9,7 +9,7 @@ import AddItem from "./components/AddItem.jsx"
 import Inicio from "./components/Inicio/Inicio.jsx"
 import Nosotros from "./components/Nosotros/Nosotros.jsx"
 import Contacto from "./components/Contacto/Contacto.jsx"
-import logoEmpresa from '../assets/logo.png'
+import logoEmpresa from './assets/logo.png'
 
 const links = [
   { href: '/', label: 'Inicio' },
