@@ -1,4 +1,5 @@
-import '../Cards/Card.css'
+/* import '../Cards/Card.css' */
+import '../../App.css'
 
 const CardDos =(params)=>{
     return (

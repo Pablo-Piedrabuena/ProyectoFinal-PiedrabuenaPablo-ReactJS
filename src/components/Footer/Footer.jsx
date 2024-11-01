@@ -1,4 +1,4 @@
-import '../Footer/Footer.css'
+import '../../App.css'
 
 const Footer =()=>{
     return (

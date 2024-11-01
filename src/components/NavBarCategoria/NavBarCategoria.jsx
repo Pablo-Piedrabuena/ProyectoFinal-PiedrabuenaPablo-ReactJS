@@ -1,4 +1,4 @@
-import '../NavBarCategoria/NavBarCategoria.css'
+import '../../App.css'
 const NavBarCategoria =({})=>{
     return (
         <>

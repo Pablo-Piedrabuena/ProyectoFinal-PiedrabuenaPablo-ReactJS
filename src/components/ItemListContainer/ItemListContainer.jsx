@@ -1,4 +1,4 @@
-import '../ItemListContainer/ItemListContainer.css'
+import '../../App.css'
 import ProductoItem from "../ProductoItem/ProductoItem"
 import NavBarCategoria from "../NavBarCategoria/NavBarCategoria"
 import {Routes, Route} from 'react-router-dom'

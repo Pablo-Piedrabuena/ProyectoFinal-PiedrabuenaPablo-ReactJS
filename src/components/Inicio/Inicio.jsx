@@ -1,5 +1,4 @@
 
-import '../Inicio/inicio.css'
 import CardUno from "../Cards/CardUno.jsx"
 import CardDos from "../Cards/CardDos.jsx"
 /* import imgOficina from '../components/Cards/assets/oficina.png' */

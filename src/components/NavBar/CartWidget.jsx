@@ -1,4 +1,4 @@
-import '../NavBar/NavBar.css'
+import '../../App.css'
 /* import imgCarrito from './assets/carrito.svg' */
 /* import imgCarrito2 from '/components/NavBar/assets/carrito.svg' */
 const CartWidget =()=>{

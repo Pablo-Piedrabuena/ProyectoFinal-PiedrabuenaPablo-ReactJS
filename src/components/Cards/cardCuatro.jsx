@@ -1,4 +1,5 @@
-import '../Cards/Card.css'
+/* import '../Cards/Card.css' */
+import '../../App.css'
 /* import imgDistribucion from './assets/distribucion.png' */
 const CardCuatro =()=>{
     return (

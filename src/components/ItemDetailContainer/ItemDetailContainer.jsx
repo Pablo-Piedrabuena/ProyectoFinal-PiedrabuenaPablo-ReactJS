@@ -1,19 +1,5 @@
-
-import '../ItemDetailContainer/ItemDetailContainer.css'
-/* import ProductoItem from "../ProductoItem/ProductoItem" */
-/* import NavBarCategoria from "../NavBarCategoria/NavBarCategoria" */
-/* import {Routes, Route} from 'react-router-dom' */
-/* import { useParams } from "react-router-dom"; */
-/* import { useEffect, useState } from 'react'; */
-/* import ItemListContainer from "../ItemListContainer/ItemListContainer" */
-
-/* import './ItemListContainer.css' */
-/* import ProductoItem from "../ProductoItem/ProductoItem"
-import NavBarCategoria from "../NavBarCategoria/NavBarCategoria"
-import {Routes, Route} from 'react-router-dom' */
-/* import { useParams } from "react-router-dom"; */
+import '../../App.css'
 import { useEffect, useState } from 'react';
-/* import { collection, getDocs } from "firebase/firestore"; */
 import { doc, getDoc } from "firebase/firestore";
 import BBDD from "../../config/firebase";
 import { useParams } from "react-router-dom";
