@@ -1,4 +1,4 @@
-import '../Cards/card.css'
+import '../Cards/Card.css'
 
 
 const CardTres =()=>{
