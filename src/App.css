@@ -803,6 +803,9 @@ h1{
     margin: 1rem;
     position: relative;
     user-select: none;
+    box-shadow: 1px 2px 20px 0px rgba(19,93,135,0.24);
+    /* box-shadow: 0px -2px 36px -16px #135D87; */
+    border-radius: 5px;
   }
   .productos__item figure{
         margin: 0;
