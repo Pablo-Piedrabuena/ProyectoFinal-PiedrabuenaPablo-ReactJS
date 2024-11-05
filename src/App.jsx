@@ -9,6 +9,7 @@ import AddItem from "./components/AddItem.jsx"
 import Inicio from "./components/Inicio/Inicio.jsx"
 import Nosotros from "./components/Nosotros/Nosotros.jsx"
 import Contacto from "./components/Contacto/Contacto.jsx"
+import Carrito from "./components/Carrito/Carrito.jsx"
 import logoEmpresa from './assets/logo.png'
 
 const links = [
@@ -29,6 +30,7 @@ function App() {
       <Route path='/productos' element={<ItemListContainer titulo="Nuestros Productos"></ItemListContainer>}></Route>
       <Route path='/productos/:categonia' element={<ItemListContainer titulo="Nuestros Productos"></ItemListContainer>}></Route>
       <Route path='/productos/:categonia/:itemID' element={<ItemDetailContainer></ItemDetailContainer>}></Route>
+      <Route path='/carrito' element={<Carrito></Carrito>}></Route>
       <Route path='/contacto' element={<Contacto></Contacto>}></Route>
     </Routes>
     <Footer/>

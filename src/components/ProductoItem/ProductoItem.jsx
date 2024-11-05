@@ -22,16 +22,14 @@ const ProductoItem =({datosProducto})=>{
         if (datosProducto.stock > 0){
             if (params.categonia===undefined){
                 let ruta = datosProducto.categoria + "/" + datosProducto.id
-                console.log()
                 navigate(ruta)
-                console.log("1")
             }else {
                 let ruta = datosProducto.id
                 navigate(ruta)
                 console.log("2")
             }
             return (
-                <ItemDetailContainer></ItemDetailContainer>
+                <ItemDetailContainer idproducto={datosProducto.id}></ItemDetailContainer>
             )
         }
     }

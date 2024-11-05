@@ -6,7 +6,8 @@ const CartCounterProvider = ({ children }) => {
     const [cartCounter, setcartCounter] = useState(0);
 
     const increment = () => {
-        setCounter(cartCounter + 1);
+        setcartCounter(cartCounter + 1000);
+        console.log(cartCounter)
     };
 
     const value = {
