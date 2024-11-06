@@ -42,6 +42,7 @@ const ItemListContainer =(props)=>{
             <section className="galeria__productos">
                 {items &&
                     items.map((element) => {
+                       /*  alert(element.id) */
                     return <ProductoItem key={element.id} datosProducto={element} />
                 })}
             </section>

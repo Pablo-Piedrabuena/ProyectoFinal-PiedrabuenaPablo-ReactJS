@@ -1091,7 +1091,7 @@ h1{
 .carrito-articulo .articulo__boton-eliminar img{
       width: 100%;
 }
-.articulo__precio{
+.articulo__total{
   box-sizing: border-box;
   width: 25%;
   font-family: 'Barlow', sans-serif;

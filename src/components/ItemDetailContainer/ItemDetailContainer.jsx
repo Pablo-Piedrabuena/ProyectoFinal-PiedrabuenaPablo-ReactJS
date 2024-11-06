@@ -14,7 +14,6 @@ const ItemDetailContainer =(props)=>{
     const AgregarProducto = async () => {
         
         const collRef = collection (BBDD.db, "carrito");
-        console.log(collRef)
         const doc = await addDoc(collRef, {
             idProducto: params.itemID,
             categoria:item.categoria,
@@ -23,6 +22,7 @@ const ItemDetailContainer =(props)=>{
             nombre:item.nombre,
             precio: item.precio,
             cantidad:inputValue,
+            total: item.precio * inputValue
         });
         navigate('/productos')
     };
