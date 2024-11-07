@@ -26,7 +26,7 @@ const ProductoItem =({datosProducto})=>{
             }else {
                 let ruta = datosProducto.id
                 navigate(ruta)
-                console.log("2")
+                /* console.log("2") */
             }
             return (
                 <ItemDetailContainer idproducto={datosProducto.id}></ItemDetailContainer>

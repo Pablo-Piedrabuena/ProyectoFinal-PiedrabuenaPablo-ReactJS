@@ -4,20 +4,56 @@ import '../../App.css'
 const ResumenCompra =({datosProducto})=>{
     let totalProductos=0
     let importeTotalCompra=0
+    {totalProductos = datosProducto.reduce((acumulador, producto) => {
+        return acumulador + producto.cantidad
+    }, 0)
+    }
+    {importeTotalCompra = datosProducto.reduce((acumulador, producto) => {
+        return acumulador + producto.total
+    }, 0)
+    }
     return (
         <>
-            {totalProductos = datosProducto.reduce((acumulador, producto) => {
-                return acumulador + producto.cantidad
-            }, 0)
-            }
-            {importeTotalCompra = datosProducto.reduce((acumulador, producto) => {
-                return acumulador + producto.total
-            }, 0)
-            }
+            
             <article className="contendor-resumen-compra">
                     <h2>Resumen de Compra</h2>
                     <p className="resumen-compra__total-prodcutos">Total Productos: {totalProductos.toFixed(2)} </p>
                     <p className="resumen-compra__importe-total">Importe Total: ${importeTotalCompra.toFixed(2)}</p>
+                    {/* <hr className='linea-separadora'/> */}
+                    <div className="datos-personales">
+                        <details className='datos-personales__grupo'>
+                            <summary>Datos Personales</summary>
+                                <label htmlFor="nombre">Nombre*</label>
+                                <input type="text" id="nombre" name="nombre" value="Profesor" required/>
+                                <label htmlFor="apellido">Apellido*</label>
+                                <input type="text" id="apellido" name="nombre" value="CoderHouse" required/>
+                                <label htmlFor="dni">D.N.I.*</label>
+                                <input type="text" id="apellido" name="dni" value="123456789" required/>
+                        </details>
+                        <details className='datos-personales__grupo'>
+                            <summary>Datos de Entrega</summary>
+                            <div class="flex-container">
+                                <input  type="radio" id="form-entrega__retiro-planta" name="entrega" value="retiro-plata" checked></input>
+                                <label for="form-entrega__retiro-planta">Retiro de planta</label>
+                            </div>
+                            <div class="flex-container">
+                                <input type="radio" id="form-entrega__entrega-domicilio" name="entrega" value="entrega-domicilio"></input>
+                                <label for="form-entrega__entrega-domicilio">Entrega a domicilio</label>
+                            </div>
+                        </details>
+                        <details className='datos-personales__grupo'>
+                            <summary>Forma de Pago</summary>
+                            <div class="flex-container">
+                                <input  type="radio" id="form-entrega__retiro-planta" name="entrega" value="retiro-plata" checked></input>
+                                <label for="form-entrega__retiro-planta">Efectivo</label>
+                            </div>
+                            <div class="flex-container">
+                                <input type="radio" id="form-entrega__entrega-domicilio" name="entrega" value="entrega-domicilio"></input>
+                                <label for="form-entrega__entrega-domicilio">Transferencia</label>
+                            </div>
+                        </details>
+                    </div>
+                    <hr className='linea-separadora'/>
                     <button className="resumen-compra__boton">Continuar Compra</button>
             </article>
         </>

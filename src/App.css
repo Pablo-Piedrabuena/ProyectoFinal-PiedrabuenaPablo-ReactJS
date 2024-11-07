@@ -1026,11 +1026,93 @@ h1{
         color: #34495E;
         margin: 1rem 0.5rem;
       }
+      .seccion-carrito .contendor-resumen-compra .datos-personales{
+        display: flex;
+        flex: 1;
+        flex-direction: column;
+        /* margin: 1rem 0.5rem; */
+        margin: 0;
+        padding: 0;
+        width: 100%;
+      }
+      .seccion-carrito .contendor-resumen-compra .datos-personales label{
+        display: block;
+        margin: .2rem auto;
+        font-family: "Barlow", sans-serif;
+        font-size: 1rem;
+        font-weight: 400;
+        color: #34495E;
+        width: 90%;
+        align-items: center;
+        padding: 0.5rem 0;
+      }
 
+      .seccion-carrito .contendor-resumen-compra .datos-personales input{
+        display: block;
+        margin: .2rem auto;
+        font-family: "Barlow", sans-serif;
+        font-size: 1rem;
+        font-weight: 400;
+        color: #34495E;
+        width: 90%;
+        align-items: center;
+        border:none;
+        border-bottom:1px solid #135D87;
+        padding: 0.5rem 0;
+      }
+      .seccion-carrito .contendor-resumen-compra .datos-personales summary{
+        display: block;
+        padding-left: .5rem;
+       /*  margin: .2rem auto; */
+        font-family: "Barlow", sans-serif;
+        font-size: 1.2rem;
+        font-weight: 400;
+        color: #34495E;
+        width: 90%;
+        align-items: center;
+        /* padding: 0.5rem 0; */
 
-
-
-
+      }
+      .seccion-carrito .contendor-resumen-compra .datos-personales input:focus{
+        outline: none;
+      }
+      /* .seccion-carrito .contendor-resumen-compra .datos-personales .details-flex{
+        display: flex;
+        align-items: center;
+      } */
+      .seccion-carrito .contendor-resumen-compra .datos-personales .flex-container {
+        display: flex;
+        align-items:left;
+        padding-left: 0.5rem;
+        margin: 0;
+        gap: 0;
+      }
+      .seccion-carrito .contendor-resumen-compra .datos-personales .flex-container input{
+        font-family: "Barlow", sans-serif;
+       /*  font-size: 1.2rem; */
+        font-weight: 400;
+        width: 1rem;
+      }
+      .seccion-carrito .contendor-resumen-compra .datos-personales .flex-container label{
+        font-family: "Barlow", sans-serif;
+        font-size: 1.2rem;
+        font-weight: 400;
+      }
+      .seccion-carrito .contendor-resumen-compra .datos-personales .datos-personales__grupo{
+        padding-top: 1rem;
+        margin-bottom: 1rem;
+        border-top: 1px solid #85929E;
+      }
+      /* .linea-separadora{
+        border-top: 1px solid #85929E;
+        height: 0;
+      } */
+      /* .datos-personales__grupo{
+        width: 100%;
+        margin: 0;
+        padding: 0;
+      }
+ */
 /* /////// */
 .carrito-articulo{
   display: flex;
