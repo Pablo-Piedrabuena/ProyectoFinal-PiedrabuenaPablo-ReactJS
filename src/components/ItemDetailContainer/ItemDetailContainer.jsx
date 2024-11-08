@@ -6,16 +6,18 @@ import { useParams } from "react-router-dom";
 import { useNavigate } from 'react-router-dom'
 import { useContext } from "react"
 import { UserContext } from "../../context/UserContext"
+/* import { setCartCounter } from "../../context/CartCounterContext" */
 
 const ItemDetailContainer =(props)=>{
 
     const { usuario } = useContext(UserContext)
+   /*  const { setCartCounter } = useContext(CartCounterContext) */
     const params = useParams() 
     const [item, setItem] = useState(null)
     const [inputValue, setinputValue] = useState(1)
     const navigate = useNavigate()
     const AgregarProducto = async () => {
-        
+        /* setCartCounter(1) */
         const collRef = collection (BBDD.db, "carrito");
         const doc = await addDoc(collRef, {
             idUsuario:usuario.idUsuario,
@@ -28,6 +30,7 @@ const ItemDetailContainer =(props)=>{
             cantidad:inputValue,
             total: item.precio * inputValue
         });
+        
         navigate('/productos')
     };
 
