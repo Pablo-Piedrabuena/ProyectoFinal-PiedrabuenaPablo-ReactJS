@@ -32,7 +32,7 @@ const Carrito =()=>{
                     <h2 className="carrito__titulo">Productos en carrito</h2>
                     {items &&
                         items.map((element) => {
-                        return <ArticuloCarrito key={element.id} datosProducto={element} />
+                        return <ArticuloCarrito key={element.id} itemId={element.id} datosProducto={element} />
                     })}
                 </article>
                 <ResumenCompra datosProducto={items}/>

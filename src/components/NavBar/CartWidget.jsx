@@ -1,4 +1,4 @@
-import { increment } from 'firebase/firestore';
+/* import { increment } from 'firebase/firestore'; */
 import '../../App.css'
 import { CartCounterContext } from "../../context/CartCounterContext"
 import { useContext } from "react"
@@ -14,7 +14,7 @@ const CartWidget =()=>{
     }
 
     const { cartCounter } = useContext(CartCounterContext)
-    const { increment } = useContext(CartCounterContext)
+    /* const { increment } = useContext(CartCounterContext) */
     return (
         <>
             {/* <button onClick={increment}>CC</button> */}
