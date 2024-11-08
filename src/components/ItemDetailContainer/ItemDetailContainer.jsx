@@ -4,9 +4,12 @@ import { doc, getDoc, addDoc, collection } from "firebase/firestore";
 import BBDD from "../../config/firebase";
 import { useParams } from "react-router-dom";
 import { useNavigate } from 'react-router-dom'
+import { useContext } from "react"
+import { UserContext } from "../../context/UserContext"
 
 const ItemDetailContainer =(props)=>{
-    
+
+    const { usuario } = useContext(UserContext)
     const params = useParams() 
     const [item, setItem] = useState(null)
     const [inputValue, setinputValue] = useState(1)
@@ -15,6 +18,7 @@ const ItemDetailContainer =(props)=>{
         
         const collRef = collection (BBDD.db, "carrito");
         const doc = await addDoc(collRef, {
+            idUsuario:usuario.idUsuario,
             idProducto: params.itemID,
             categoria:item.categoria,
             descripcion: item.descripcion,

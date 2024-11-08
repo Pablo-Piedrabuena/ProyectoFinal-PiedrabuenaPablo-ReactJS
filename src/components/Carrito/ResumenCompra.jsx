@@ -1,7 +1,10 @@
 import '../../App.css'
+import { useContext } from "react"
+import { UserContext } from "../../context/UserContext"
 /* import { useNavigate } from 'react-router-dom' */
 
 const ResumenCompra =({datosProducto})=>{
+    const { usuario } = useContext(UserContext)
     let totalProductos=0
     let importeTotalCompra=0
     {totalProductos = datosProducto.reduce((acumulador, producto) => {
@@ -12,6 +15,7 @@ const ResumenCompra =({datosProducto})=>{
         return acumulador + producto.total
     }, 0)
     }
+
     return (
         <>
             
@@ -24,32 +28,32 @@ const ResumenCompra =({datosProducto})=>{
                         <details className='datos-personales__grupo'>
                             <summary>Datos Personales</summary>
                                 <label htmlFor="nombre">Nombre*</label>
-                                <input type="text" id="nombre" name="nombre" value="Profesor" required/>
+                                <input type="text" id="nombre" name="nombre" defaultValue={usuario.nombre} required/>
                                 <label htmlFor="apellido">Apellido*</label>
-                                <input type="text" id="apellido" name="nombre" value="CoderHouse" required/>
+                                <input type="text" id="apellido" name="nombre" defaultValue={usuario.apellido} required/>
                                 <label htmlFor="dni">D.N.I.*</label>
-                                <input type="text" id="apellido" name="dni" value="123456789" required/>
+                                <input type="text" id="apellido" name="dni" defaultValue={usuario.dni} required/>
                         </details>
                         <details className='datos-personales__grupo'>
                             <summary>Datos de Entrega</summary>
-                            <div class="flex-container">
-                                <input  type="radio" id="form-entrega__retiro-planta" name="entrega" value="retiro-plata" checked></input>
-                                <label for="form-entrega__retiro-planta">Retiro de planta</label>
+                            <div className="flex-container">
+                                <input  type="radio" id="form-entrega__retiro-planta" name="entrega" defaultValue="retiro-plata"></input>
+                                <label htmlFor="form-entrega__retiro-planta">Retiro de planta</label>
                             </div>
-                            <div class="flex-container">
-                                <input type="radio" id="form-entrega__entrega-domicilio" name="entrega" value="entrega-domicilio"></input>
-                                <label for="form-entrega__entrega-domicilio">Entrega a domicilio</label>
+                            <div className="flex-container">
+                                <input type="radio" id="form-entrega__entrega-domicilio" name="entrega" defaultValue="entrega-domicilio"></input>
+                                <label htmlFor="form-entrega__entrega-domicilio">Entrega a domicilio</label>
                             </div>
                         </details>
                         <details className='datos-personales__grupo'>
                             <summary>Forma de Pago</summary>
-                            <div class="flex-container">
-                                <input  type="radio" id="form-entrega__retiro-planta" name="entrega" value="retiro-plata" checked></input>
-                                <label for="form-entrega__retiro-planta">Efectivo</label>
+                            <div className="flex-container">
+                                <input  type="radio" id="form-entrega__retiro-planta" name="entrega" defaultValue="retiro-plata"></input>
+                                <label htmlFor="form-entrega__retiro-planta">Efectivo</label>
                             </div>
-                            <div class="flex-container">
-                                <input type="radio" id="form-entrega__entrega-domicilio" name="entrega" value="entrega-domicilio"></input>
-                                <label for="form-entrega__entrega-domicilio">Transferencia</label>
+                            <div className="flex-container">
+                                <input type="radio" id="form-entrega__entrega-domicilio" name="entrega" defaultValue="entrega-domicilio"></input>
+                                <label htmlFor="form-entrega__entrega-domicilio">Transferencia</label>
                             </div>
                         </details>
                     </div>
