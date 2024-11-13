@@ -16,8 +16,17 @@ const Carrito =()=>{
     /* let { carrito,setCarrito } = useContext(CartCounterContext) */
     let { carrito } = useContext(CartCounterContext)
     let { setCarrito } = useContext(CartCounterContext)
-   /*  let {setCarrito}
- */
+    /* let importeTotalCompra=0
+    let totalProductos=0
+    {totalProductos = carrito.reduce((acumulador, producto) => {
+        return acumulador + producto.cantidad
+    }, 0)
+    }
+    {importeTotalCompra = carrito.reduce((acumulador, producto) => {
+        return acumulador + producto.totalCompra
+    }, 0)
+    } */
+
     useEffect(() => {
             setCarrito(JSON.parse(localStorage.getItem("carrito")) || [])
             setItems(carrito)

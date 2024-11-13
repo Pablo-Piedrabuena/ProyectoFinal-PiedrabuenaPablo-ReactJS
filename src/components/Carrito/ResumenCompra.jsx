@@ -11,8 +11,9 @@ const ResumenCompra =({datosProducto})=>{
         return acumulador + producto.cantidad
     }, 0)
     }
+    /* console.log(datosProducto) */
     {importeTotalCompra = datosProducto.reduce((acumulador, producto) => {
-        return acumulador + producto.total
+        return acumulador + parseFloat(producto.totalCompra)
     }, 0)
     }
 
@@ -22,7 +23,7 @@ const ResumenCompra =({datosProducto})=>{
             <article className="contendor-resumen-compra">
                     <h2>Resumen de Compra</h2>
                     <p className="resumen-compra__total-prodcutos">Total Productos: {totalProductos.toFixed(2)} </p>
-                    <p className="resumen-compra__importe-total">Importe Total: ${importeTotalCompra.toFixed(2)}</p>
+                    <p className="resumen-compra__importe-total">Importe Total: $ {parseFloat(importeTotalCompra).toFixed(2)}</p>
                     {/* <hr className='linea-separadora'/> */}
                     <div className="datos-personales">
                         <details className='datos-personales__grupo'>
