@@ -8,33 +8,41 @@ import { useParams } from "react-router-dom";
 import { useNavigate } from 'react-router-dom'
 import { useContext } from "react"
 import { UserContext } from "../../context/UserContext"
+import { CartCounterContext } from "../../context/CartCounterContext"
 
 
 const ItemDetailContainer =(props)=>{
+    
 
     const { usuario } = useContext(UserContext)
+    let { carrito } = useContext(CartCounterContext)
+    let { setCarrito } = useContext(CartCounterContext)
     const params = useParams() 
     const [item, setItem] = useState(null)
     const [inputValue, setinputValue] = useState(1)
     const navigate = useNavigate()
+
     const AgregarProducto = async () => {
-
-        const collRef = collection (BBDD.db, "carrito");
-        const doc = await addDoc(collRef, {
-            idUsuario:usuario.idUsuario,
-            idProducto: params.itemID,
-            categoria:item.categoria,
-            descripcion: item.descripcion,
-            img: item.img,
-            nombre:item.nombre,
-            precio: item.precio,
-            cantidad:inputValue,
-            total: item.precio * inputValue
-        });
-        
+        const productoEnCarrito = carrito.find(el => el.id === params.itemID)
+        if (productoEnCarrito) {
+            productoEnCarrito.cantidad += inputValue
+            productoEnCarrito.totalCompra = productoEnCarrito.cantidad * item.precio
+        } else {
+            carrito.push({
+                id: params.itemID,
+                nombre: item.nombre,
+                descripción: item.descripcion,
+                categoria: item.categoria,
+                precio: item.precio,
+                img: item.img,
+                cantidad: inputValue,
+                totalCompra: (inputValue * parseFloat(item.precio)).toFixed(2)
+            })
+        }
+        localStorage.setItem("carrito", JSON.stringify(carrito))        
         navigate('/productos')
+        setCarrito(JSON.parse(localStorage.getItem("carrito")) || [])
     };
-
     const handleChange = (event) => {
         let newValue = parseInt(event.target.value)
         if (newValue > 0 && newValue <= item.stock){
@@ -44,6 +52,9 @@ const ItemDetailContainer =(props)=>{
         }else{
             //NO hacer Nada
         }
+        
+        
+
     }
     useEffect(() => {
         const docRef = doc(BBDD.db, "productos", params.itemID);
@@ -73,7 +84,6 @@ const ItemDetailContainer =(props)=>{
                         {item.stock < inputValue ? <p className='icon-advertencia'><span className="fa-solid fa-circle-exclamation"></span> Sin stock</p> : null}
                     </div>
                     {item.stock >= inputValue ? <button className="Conetenedorform__btn-Agregar" onClick={AgregarProducto}>Agregar al carrito</button> : null}
-                    
                 </div>
             </section>
         </>

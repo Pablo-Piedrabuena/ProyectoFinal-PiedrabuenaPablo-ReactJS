@@ -7,24 +7,21 @@ import BBDD from "../../config/firebase"
 import { useEffect, useState } from 'react'
 import { useContext } from "react"
 import { UserContext } from "../../context/UserContext"
+import { CartCounterContext} from "../../context/CartCounterContext"
 
 const Carrito =()=>{
     const [items, setItems] = useState([])
     const [totales, setTotales] = useState([])
     const { usuario } = useContext(UserContext)
-
+    /* let { carrito,setCarrito } = useContext(CartCounterContext) */
+    let { carrito } = useContext(CartCounterContext)
+    let { setCarrito } = useContext(CartCounterContext)
+   /*  let {setCarrito}
+ */
     useEffect(() => {
-            const collectionsRef = collection(BBDD.db, "carrito")
-            const filtroQuery = query(collectionsRef, where("idUsuario", "==", usuario.idUsuario))    
-            getDocs(filtroQuery)
-                .then((snapshot) => {
-                    const list = snapshot.docs.map((doc) => ({ ...doc.data(), id: doc.id }))
-                    setItems(list)
-                })
-            .catch((error) => {
-                /* console.error("Error getting documents: ", error) */
-            })
-        }, [])
+            setCarrito(JSON.parse(localStorage.getItem("carrito")) || [])
+            setItems(carrito)
+        }, [carrito])
     return (
         <>
             <section className="seccion-carrito">
@@ -32,7 +29,7 @@ const Carrito =()=>{
                     <h2 className="carrito__titulo">Productos en carrito</h2>
                     {items &&
                         items.map((element) => {
-                        return <ArticuloCarrito key={element.id} itemId={element.id} datosProducto={element} />
+                        return <ArticuloCarrito key={element.id} itemId={element.id} itemStock={element.stock} itemCantidad={element.cantidad} datosProducto={element} />
                     })}
                 </article>
                 <ResumenCompra datosProducto={items}/>

@@ -5,26 +5,20 @@ import { collection, query, where, onSnapshot } from "firebase/firestore"
 import BBDD from "../config/firebase"
 
 export const CartCounterContext = createContext(null)
-
+/* let carrito = JSON.parse(localStorage.getItem("carrito")) || [] */
 const CartCounterProvider = ({ children }) => {
     const [cartCounter, setCartCounter] = useState(0)
     const { usuario } = useContext(UserContext)
-
+    const [carrito, setCarrito] = useState(JSON.parse(localStorage.getItem("carrito")) || [])
     useEffect(() => {
-        const collectionsRef = collection(BBDD.db, "carrito")
-        const filtroQuery = query(collectionsRef, where("idUsuario", "==", usuario.idUsuario))
-
-        const consulta = onSnapshot(filtroQuery, (snapshot) => {
-            const list = snapshot.docs.map((doc) => ({ ...doc.data(), id: doc.id }))
-            const totalProductos = list.reduce((acumulador, producto) => acumulador + producto.cantidad, 0)
-            setCartCounter(totalProductos)
-        });
-
-    return () => consulta()
-}, [usuario])
+        const totalProductos = carrito.reduce((acumulador, producto) => acumulador + producto.cantidad, 0)
+        setCartCounter(totalProductos)
+}, [carrito])
 
 const value = {
     cartCounter,
+    carrito,
+    setCarrito
   }
 
   return (

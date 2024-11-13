@@ -1155,13 +1155,63 @@ h1{
       overflow: hidden;
       text-overflow: ellipsis;
 }
-.carrito-articulo .articulo__boton-cantidad{
+.carrito-articulo .articulo__contenedor-cantidad{
   box-sizing: border-box;
+  display: flex;
   width: 25%;
+  justify-content: center;
+  align-items: center;
+  /* padding: .5rem; */
+}
+.carrito-articulo .articulo__contenedor-cantidad .contenedor-cantidad__btn-incrementar{
   font-family: 'Barlow', sans-serif;
-      font-size: 1.2rem;
-      font-weight: 400;
-  color:#34495E;
+  font-size: 1.2rem;
+  font-weight: 400;
+  width: 1.5rem;
+  height: 1.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #34495E;
+  border-radius: 5px;
+  margin: .5rem;
+  background-color: rgba(19, 93, 135, .8);
+  color: white;
+}
+.carrito-articulo .articulo__contenedor-cantidad .contenedor-cantidad__btn-disminuir{
+  font-family: 'Barlow', sans-serif;
+  font-size: 1.2rem;
+  font-weight: 400;
+  width: 1.5rem;
+  height: 1.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #34495E;
+  border-radius: 5px;
+  margin: .5rem;
+  background-color: rgba(19, 93, 135, .8);
+  color: white;
+}
+.carrito-articulo .articulo__contenedor-cantidad .articulo__cantidad{
+/* 
+  font-family: 'Barlow', sans-serif;
+  font-size: 1.2rem;
+  font-weight: 400;
+  color:#34495E; */
+  font-family: 'Barlow', sans-serif;
+  font-size: 1.2rem;
+  font-weight: 400;
+  width: 5rem;
+  height: 1.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #34495E;
+  border-radius: 5px;
+  margin: .5rem;
+  color: #34495E;
+  text-align: center;
 }
 .carrito-articulo .articulo__boton-eliminar{
   box-sizing: border-box;
