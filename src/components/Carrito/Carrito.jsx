@@ -26,11 +26,19 @@ const Carrito =()=>{
         return acumulador + producto.totalCompra
     }, 0)
     } */
-
+    const eliminarProducto = (itemId) =>{
+        const carritoActualizado = carrito.filter(el => el.id !== itemId)
+        setCarrito(carritoActualizado)
+        localStorage.setItem("carrito", JSON.stringify(carritoActualizado))
+        /* localStorage.setItem("carrito", JSON.stringify(carritoActualizado)) */
+        /* setCarrito(JSON.parse(localStorage.getItem("carrito")) || []) */
+        setItems(carritoActualizado)
+        
+    }
     useEffect(() => {
             setCarrito(JSON.parse(localStorage.getItem("carrito")) || [])
             setItems(carrito)
-        }, [carrito])
+        }, [])
     return (
         <>
             <section className="seccion-carrito">
@@ -38,7 +46,7 @@ const Carrito =()=>{
                     <h2 className="carrito__titulo">Productos en carrito</h2>
                     {items &&
                         items.map((element) => {
-                        return <ArticuloCarrito key={element.id} itemId={element.id} itemStock={element.stock} itemCantidad={element.cantidad} datosProducto={element} />
+                        return <ArticuloCarrito key={element.id} itemId={element.id} itemStock={element.stock} itemCantidad={element.cantidad} datosProducto={element} onEliminarProducto={eliminarProducto}/>
                     })}
                 </article>
                 <ResumenCompra datosProducto={items}/>

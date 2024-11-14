@@ -5,7 +5,7 @@ import { useState, useEffect  } from 'react';
 import BBDD from "../../config/firebase";
 import { useContext } from "react"
 import { CartCounterContext} from "../../context/CartCounterContext"
-const ArticuloCarrito =({datosProducto, itemId})=>{
+const ArticuloCarrito =({datosProducto, itemId, onEliminarProducto})=>{
     /* console.log(datosProducto) */
     const [cantidadCompra, setCantidadCompra] = useState(datosProducto.cantidad)
     const [totalCompra, setTotalCompra] = useState(datosProducto.totalCompra)
@@ -27,9 +27,10 @@ const ArticuloCarrito =({datosProducto, itemId})=>{
             confirmButtonText: "Si"
         }).then((result) => {
             if (result.isConfirmed) {
-                const carritoActualizado = carrito.filter(el => el.id !== itemId)
-                localStorage.setItem("carrito", JSON.stringify(carritoActualizado))
-                setCarrito(JSON.parse(localStorage.getItem("carrito")) || [])
+                onEliminarProducto(itemId)
+               /*  const carritoActualizado = carrito.filter(el => el.id !== itemId)
+                localStorage.setItem("carrito", JSON.stringify(carritoActualizado)) */
+                /* setCarrito(carrito) */
             }
         })
     }
