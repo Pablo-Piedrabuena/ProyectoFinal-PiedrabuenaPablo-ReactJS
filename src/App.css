@@ -1103,6 +1103,20 @@ h1{
         margin-bottom: 1rem;
         border-top: 1px solid #85929E;
       }
+      .seccion-carrito .contendor-resumen-compra .resumen-compra__boton{
+        text-align:center;
+                align-content: center;
+                width: 10rem;
+                font-family: "Barlow", sans-serif;
+        font-size: 1rem;
+        font-weight: 400;
+                background-color: #135D87;
+                color: #E6E6E6;
+                height: 2.5rem;
+                margin: 12rem;
+                border-radius: 5px 5px 5px 5px;
+                margin: auto;
+      }
       /* .linea-separadora{
         border-top: 1px solid #85929E;
         height: 0;

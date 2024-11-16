@@ -15,7 +15,7 @@ const ResumenCompra =({datosProducto, onVaciarCarrito})=>{
     const { cartCounter } = useContext(CartCounterContext)
     const { cartImporte } = useContext(CartCounterContext)
     const [validaDatos, setValidaDatos] = useState(false)
-
+    
     const validaProcesoCompra = () =>{
         const nombre = document.getElementById('nombre')
         const apellido = document.getElementById('apellido')
@@ -29,24 +29,36 @@ const ResumenCompra =({datosProducto, onVaciarCarrito})=>{
             setValidaDatos(false)
         }        
     }
-    const terminarCompra =  () =>{
-        carrito.forEach(async (el)  => {
-            const docRef = doc(BBDD.db, "productos", el.id)
-            const docSnap =  await getDoc(docRef)
-            const newStock = docSnap.data().stock - el.cantidad
-            updateDoc(docRef, {
-                stock: newStock,
-            })
-        })
-        onVaciarCarrito()
+
+    const mensajeAlerta =  (icono, titulo, texto) =>{
         Swal.fire({
             position: "top-center",
-            icon: "success",
-            title: "¡Gracias por su compra!",
-            text: "¡Uno de nuestros asesores de ventas se estará comunicando con usted para concluir el proceso!",
-            /* showConfirmButton: false, */
-           /*  timer: 1500 */
+            icon: icono,
+            title: titulo,
+            text: texto,
         })
+    }
+    const terminarCompra =  () =>{
+        let icono =""
+        let titulo =""
+        let texto=""
+        if (carrito.length === 0) {
+            /* alert("Vacio") */
+            mensajeAlerta("error", "¡No hay productos en carrito!", "")
+        }else {
+            carrito.forEach(async (el)  => {
+                const docRef = doc(BBDD.db, "productos", el.id)
+                const docSnap =  await getDoc(docRef)
+                const newStock = docSnap.data().stock - el.cantidad
+                updateDoc(docRef, {
+                    stock: newStock,
+                })
+            })
+            onVaciarCarrito()
+            mensajeAlerta("success", "¡Gracias por su compra!", "¡Uno de nuestros asesores de ventas se estará comunicando con usted para concluir el proceso!")
+        }
+        
+        
     }
 
     useEffect(() => {
@@ -59,7 +71,6 @@ const ResumenCompra =({datosProducto, onVaciarCarrito})=>{
                     <h2>Resumen de Compra</h2>
                     <p className="resumen-compra__total-prodcutos">Total Productos: {parseInt(cartCounter).toFixed(2)} </p>
                     <p className="resumen-compra__importe-total">Importe Total: $ {parseFloat(cartImporte).toFixed(2)}</p>
-                    {/* <hr className='linea-separadora'/> */}
                     <div className="datos-personales">
                         <details className='datos-personales__grupo' onChange={validaProcesoCompra}>
                             <summary>Datos Personales</summary>
@@ -92,28 +103,6 @@ const ResumenCompra =({datosProducto, onVaciarCarrito})=>{
                                 <label htmlFor="pago__transferencia">Transferencia</label>
                             </div>
                         </details>
-                        {/* <details className='datos-personales__grupo'>
-                            <summary>Datos de Entrega</summary>
-                            <div className="flex-container">
-                                <input  type="radio" id="form-entrega__retiro-planta" name="entrega" defaultValue="retiro-plata"></input>
-                                <label htmlFor="form-entrega__retiro-planta">Retiro de planta</label>
-                            </div>
-                            <div className="flex-container">
-                                <input type="radio" id="form-entrega__entrega-domicilio" name="entrega" defaultValue="entrega-domicilio"></input>
-                                <label htmlFor="form-entrega__entrega-domicilio">Entrega a domicilio</label>
-                            </div>
-                        </details>
-                        <details className='datos-personales__grupo'>
-                            <summary>Forma de Pago</summary>
-                            <div className="flex-container">
-                                <input  type="radio" id="form-entrega__retiro-planta" name="pago" defaultValue="retiro-plata"></input>
-                                <label htmlFor="form-entrega__retiro-planta">Efectivo</label>
-                            </div>
-                            <div className="flex-container">
-                                <input type="radio" id="form-entrega__entrega-domicilio" name="pago" defaultValue="entrega-domicilio"></input>
-                                <label htmlFor="form-entrega__entrega-domicilio">Transferencia</label>
-                            </div>
-                        </details> */}
                     </div>
                     <hr className='linea-separadora'/>
                     <button className="resumen-compra__boton" disabled={!validaDatos} onClick={terminarCompra} >Continuar Compra</button>
