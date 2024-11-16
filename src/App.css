@@ -605,7 +605,6 @@ h1{
     animation-iteration-count: infinite;
     animation-duration: 5s;
   }
-
   .nav-ecomerce .nav-ecomerce__enlaces{
     display: flex;
     box-sizing: border-box;
@@ -713,7 +712,7 @@ h1{
     .nav-ecomerce .nav-ecomerce__contenedor-logo{
         order: -1;
     } */
-    .nav-ecomerce .nav-ecomerce__enlaces{
+    /* .nav-ecomerce .nav-ecomerce__enlaces{
         display: none;
     }
     .nav-ecomerce .carrito__nav-ecomerce{
@@ -722,7 +721,7 @@ h1{
     .nav-ecomerce .nav-ecomerce__btn-menu{
         display: block;
         text-align: right;
-  }
+  } */
 }
 /* NAVBAR:FIN */
 
