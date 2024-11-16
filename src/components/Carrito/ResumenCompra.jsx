@@ -32,7 +32,7 @@ const ResumenCompra =({datosProducto, onVaciarCarrito})=>{
 
     const mensajeAlerta =  (icono, titulo, texto) =>{
         Swal.fire({
-            position: "top-center",
+            position: "center",
             icon: icono,
             title: titulo,
             text: texto,
